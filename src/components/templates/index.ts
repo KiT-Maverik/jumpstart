@@ -8,3 +8,6 @@ export * from './layout/Drawer/Drawer'
 export * from './layout/Toolbar/Toolbar'
 
 // Pages
+export * from './pages/SignIn/SignInPage'
+export * from './pages/SignUp/SignUpPage'
+export * from './pages/RestorePassword/RestorePasswordPage'
