@@ -15,7 +15,6 @@ import { ModalProvider } from './ModalProvider/ModalProvider'
 import { TanstackProvider } from './TanstackProvider/TanstackProvider'
 import { ThemeProvider } from './ThemeProvider/ThemeProvider'
 import { ToastProvider } from './ToastProvider/ToastProvider'
-import { SessionController } from './SessionController/SessionController'
 
 const clientSideEmotionCache = createCache({ key: 'css', prepend: true })
 
@@ -25,7 +24,6 @@ export const Providers = ({ children }: { children: ReactNode }) => {
 			<StoreProvider store={store}>
 				<TanstackProvider>
 					<CacheProvider value={clientSideEmotionCache}>
-						<SessionController />
 						<ReactQueryDevtools initialIsOpen={false} />
 						<CssBaseline/>
 						<ThemeProvider>
