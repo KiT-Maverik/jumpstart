@@ -2,6 +2,7 @@
 
 import createCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
+import { CssBaseline } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ReactNode } from 'react'
@@ -14,7 +15,6 @@ import { ModalProvider } from './ModalProvider/ModalProvider'
 import { TanstackProvider } from './TanstackProvider/TanstackProvider'
 import { ThemeProvider } from './ThemeProvider/ThemeProvider'
 import { ToastProvider } from './ToastProvider/ToastProvider'
-import { CssBaseline } from '@mui/material'
 
 const clientSideEmotionCache = createCache({ key: 'css', prepend: true })
 

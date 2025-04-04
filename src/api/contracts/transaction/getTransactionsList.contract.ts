@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 import { id, paginator, STATISTIC_PERIOD, transaction, TRANSACTION_TYPE } from 'api/schemas'
-import { CONTRACT_GROUP, paginatorExample, REQUEST_METHOD, route, SORTING } from 'api/constants'
+import { CONTRACT_GROUP, defaultPaginator, REQUEST_METHOD, route, SORTING } from 'api/constants'
 import { createTransactionMock } from 'api/mocks'
 import {
 	Contract,
@@ -50,7 +50,7 @@ const query = {
 	filter_by_type: TRANSACTION_TYPE.BUY,
 	filter_by_period: STATISTIC_PERIOD.YEAR,
 	sort: createSortingQueryParam([['']]),
-	...paginatorExample,
+	...defaultPaginator,
 } satisfies GetTransactionsList_RequestQuery
 
 if (process.env[environmentVariable.addMetaToContracts]) {

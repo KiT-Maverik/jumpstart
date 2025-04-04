@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 import { challengeRule, paginator } from 'api/schemas'
-import { CONTRACT_GROUP, paginatorExample, REQUEST_METHOD, route } from 'api/constants'
+import { CONTRACT_GROUP, defaultPaginator, REQUEST_METHOD, route } from 'api/constants'
 import { createChallengeRuleMock } from 'api/mocks'
 import {
 	Contract,
@@ -44,7 +44,7 @@ if (process.env[environmentVariable.addMetaToContracts]) {
 	const requestExample: GetChallengeRulesList_Request = {
 		query: {
 			company_id: fakeData.uuid,
-			...paginatorExample,
+			...defaultPaginator,
 		}
 	}
 

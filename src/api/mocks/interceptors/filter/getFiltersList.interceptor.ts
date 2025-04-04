@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import { fakeBackend, paginatorExample } from 'api/constants'
+import { fakeBackend, defaultPaginator } from 'api/constants'
 import { getFiltersListContract, GetFiltersList_RequestQuery, GetFiltersList_ResponsePayload } from 'api/contracts'
 import { parseSearchParameters } from 'utils'
 
@@ -11,8 +11,8 @@ const { endpoint: { method, route }, responseExample } = getFiltersListContract
 export const getFiltersList_Interceptor =
 	http[method](fakeBackend + route, ({ request }) => {
 		const {
-			limit = paginatorExample.limit,
-			offset = paginatorExample.offset
+			limit = defaultPaginator.limit,
+			offset = defaultPaginator.offset
 		} = parseSearchParameters<GetFiltersList_RequestQuery>(request.url)
 
 		const data = database.filters.slice(offset, limit)
