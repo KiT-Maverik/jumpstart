@@ -1,7 +1,7 @@
 import z from 'zod'
 
 import { company, paginator } from 'api/schemas'
-import { CONTRACT_GROUP, paginatorExample, REQUEST_METHOD, route } from 'api/constants'
+import { CONTRACT_GROUP, defaultPaginator, REQUEST_METHOD, route } from 'api/constants'
 import { createCompanyMock } from 'api/mocks'
 import {
 	Contract,
@@ -39,7 +39,7 @@ let metadata: undefined | Contract_Meta = undefined
 
 if (process.env[environmentVariable.addMetaToContracts]) {
 	const requestExample: GetCompaniesList_Request = {
-		query: paginatorExample
+		query: defaultPaginator
 	}
 
 	const responseExample: GetCompaniesList_Response = {

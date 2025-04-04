@@ -1,6 +1,6 @@
 import z from 'zod'
 
-import { CONTRACT_GROUP, paginatorExample, REQUEST_METHOD, route } from 'api/constants'
+import { CONTRACT_GROUP, defaultPaginator, REQUEST_METHOD, route } from 'api/constants'
 import { createAddonMock } from 'api/mocks'
 import { addon, paginator } from 'api/schemas'
 import { environmentVariable, fakeData } from 'configuration/constants'
@@ -41,7 +41,7 @@ if (process.env[environmentVariable.addMetaToContracts]) {
 	const addon = createAddonMock({ id: fakeData.uuid })
 
 	const requestExample: GetAddonList_Request = {
-		query: paginatorExample
+		query: defaultPaginator
 	}
 
 	const responseExample: GetAddonList_Response = {

@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-import { fakeBackend, paginatorExample } from 'api/constants'
+import { fakeBackend, defaultPaginator } from 'api/constants'
 import { getAddonsListContract, GetAddonList_Query, GetAddonList_ResponsePayload } from 'api/contracts'
 import { parseSearchParameters } from 'utils'
 
@@ -11,8 +11,8 @@ const { endpoint: { method, route }, responseExample } = getAddonsListContract
 export const getChallengesList_Interceptor =
 	http[method](fakeBackend + route, ({ request }) => {
 		const {
-			limit = paginatorExample.limit,
-			offset = paginatorExample.offset
+			limit = defaultPaginator.limit,
+			offset = defaultPaginator.offset
 		} = parseSearchParameters<GetAddonList_Query>(request.url)
 
 		const data = database.challenges.slice(offset, limit)

@@ -1,5 +1,5 @@
 import { entityList_ResponsePayload_Schema, filter, paginator } from 'api/schemas'
-import { CONTRACT_GROUP, paginatorExample, REQUEST_METHOD, route } from 'api/constants'
+import { CONTRACT_GROUP, defaultPaginator, REQUEST_METHOD, route } from 'api/constants'
 import {
 	Contract,
 	Contract_ApiSchemaConstructor,
@@ -34,7 +34,7 @@ let metadata: undefined | Contract_Meta = undefined
 
 if (process.env[environmentVariable.addMetaToContracts]) {
 	const requestExample: GetFiltersList_Request = {
-		query: paginatorExample
+		query: defaultPaginator
 	}
 
 	const responseExample: GetFiltersList_Response = {

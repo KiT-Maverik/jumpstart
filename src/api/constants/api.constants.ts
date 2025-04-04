@@ -30,7 +30,7 @@ export enum CONTRACT_GROUP {
 	STATISTICS = 'Statistics',
 }
 
-export const paginatorExample: Paginator = {
+export const defaultPaginator: Paginator = {
 	offset: 0,
 	limit: 10,
 }

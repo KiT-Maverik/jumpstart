@@ -32,8 +32,8 @@ export type ApiError = z.infer<typeof apiError>
 export type ApiError_Payload = ApiError['payload']
 
 export const paginator = z.object({
-	offset: z.number().int().nonnegative().optional(), // todo do we have int validation?
-	limit: z.number().int().positive().optional() // todo do we have int validation?
+	offset: z.number().int().nonnegative(),
+	limit: z.union([z.literal(10), z.literal(25), z.literal(50), z.literal(100)])
 })
 export type Paginator = z.infer<typeof paginator>
 
