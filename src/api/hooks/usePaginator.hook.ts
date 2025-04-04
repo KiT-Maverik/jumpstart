@@ -50,6 +50,7 @@ export const usePaginator = (total = 0) => {
 			pagesQty,
 			setLimit,
 			nextPage,
+			previousPage,
 			...options,
 		}),
 		[hasNextPage, hasPreviousPage, pagesQty, setLimit, nextPage, options]
