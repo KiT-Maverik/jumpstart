@@ -16,18 +16,7 @@ export enum SORTING {
 }
 
 export enum CONTRACT_GROUP {
-	ADDON = 'Addon',
-	API_KEY = 'API key',
-	AUTH = 'Authentication',
 	USER = 'User',
-	CHALLENGE = 'Challenge',
-	CHALLENGE_RULE = 'Challenge rule',
-	CHALLENGE_TYPE = 'Challenge type',
-	GROUP = 'Group',
-	TRANSACTION = 'Transaction',
-	FILTER = 'Filter',
-	COMPANY = 'Company',
-	STATISTICS = 'Statistics',
 }
 
 export const defaultPaginator: Paginator = {
