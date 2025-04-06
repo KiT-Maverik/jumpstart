@@ -2,10 +2,6 @@ import { z, ZodSchema } from 'zod'
 
 import { regex } from 'configuration/constants'
 
-// todo add token endpoints
-// todo add refinement for entities with conditional optionals
-// todo make optionally readonly
-// todo add feature to add description
 export const id = z.string().uuid().readonly()
 export type Id = z.infer<typeof id>
 
